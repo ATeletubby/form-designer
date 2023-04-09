@@ -5,6 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
+    "lint": "lint-staged --cwd .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -23,16 +25,8 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
-    "@typescript-eslint/eslint-plugin": "^5.38.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{vue,ts,tsx,js}": ["eslint --cache --fix"],
-    "*.json": ["prettier --parser=json --write"],
-    "*.{css,scss}": ["prettier --parser=css --write"]
+    "@typescript-eslint/parser": "^5.38.0",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "less": "^4.1.3"
   }
 }
