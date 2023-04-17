@@ -1,0 +1,65 @@
+.product-designer-view {
+  height: calc(100vh - 60px);
+
+  .product-designer-component-wrapper {
+    .tool-wrapper {
+      @apply wd-border-1 wd-border-solid wd-rounded-1/2 wd-w-28px wd-h-28px wd-cursor-pointer wd-flex wd-justify-center wd-items-center wd-bg-white;
+  
+      &:hover {
+        .tool-icon {
+          @apply wd-text-white;
+        }
+      }
+  
+      .tool-icon {
+        @apply wd-text-sm;
+      }
+    }
+  }
+
+  .visible-config-component {
+    .choose-item {
+      @apply wd-border-1 wd-border-solid wd-border-gray-300 wd-rounded wd-p-10px hover:wd-bg-gray-50 wd-cursor-pointer wd-flex wd-justify-center wd-items-center;
+    }
+  }
+
+  .rule-relation-component {
+    .tool-wrapper {
+      @apply wd-border-1 wd-border-solid wd-rounded-1/2 wd-w-20px wd-h-20px wd-cursor-pointer wd-flex wd-justify-center wd-items-center wd-bg-white;
+  
+      &:hover {
+        .tool-icon {
+          @apply wd-text-white;
+        }
+      }
+  
+      .tool-icon {
+        @apply wd-text-xs;
+      }
+    }
+
+    .rule-group-wrapper {
+      .rule-group-tool {
+        display: none;
+      }
+
+      &:hover {
+        .rule-group-tool {
+          display: grid;
+        }
+      }
+    }
+
+    .rule-item-wrapper {
+      .rule-item-tool {
+        display: none;
+      }
+
+      &:hover {
+        .rule-item-tool {
+          display: grid;
+        }
+      }
+    }
+  }
+}

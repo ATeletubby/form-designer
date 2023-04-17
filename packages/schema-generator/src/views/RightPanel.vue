@@ -1,4 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ComponentConfig from "../components/config-panel/ComponentConfigPanel.vue";
+import { ref } from "vue";
+import { useConfigStore } from "../stores/config";
+const store = useConfigStore();
+const activeTab = ref("first");
+
+function changeLabelWidth(currentValue: number) {
+  store.changeLabelWidth(currentValue);
+}
+</script>
 
 <template>
   <div
@@ -8,6 +18,7 @@
     w:h="full"
     w:p="b-20px"
     w:overflow="y-auto"
+    style="height: 100vh"
   >
     <el-tabs v-model="activeTab" :stretch="true">
       <el-tab-pane label="组件属性" name="first">

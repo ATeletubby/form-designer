@@ -5,6 +5,7 @@ import RightPanel from "./RightPanel.vue";
 import ComponentCreateDialog from "./ComponentCreateDialog.vue";
 import { ComponentItem } from "../model";
 import { useConfigStore } from "../stores/config";
+import "./designerView.less";
 const store = useConfigStore();
 
 function addComponent(component: ComponentItem, key?: string) {
@@ -18,6 +19,7 @@ function addComponent(component: ComponentItem, key?: string) {
   } else {
     store.productSchema.components.push(newComponent);
   }
+  console.info(store.productSchema, store.activeComponent);
   // 默认选中新创建的组件
   store.changeActiveComponentId(newComponent.id);
   store.changeActiveComponent(newComponent);

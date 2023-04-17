@@ -1,8 +1,4 @@
 <script setup lang="ts">
-function handleSubmitClick() {
-  console.info("submit");
-}
-
 function handlePreviewClick() {
   console.info("submit");
 }
@@ -27,10 +23,9 @@ function showFinallySchema() {
   >
     <h1 w:w="300px">Form Designer</h1>
     <div w:w="full" w:flex="~" w:justify="end">
-      <el-button type="text" @click="handleSubmitClick">提交</el-button>
-      <el-button type="text" @click="handlePreviewClick">前往预览</el-button>
-      <el-button type="text" @click="handleSchemaImport">导入</el-button>
-      <el-button type="text" @click="showFinallySchema">展示JSON</el-button>
+      <el-button type="text" @click="handlePreviewClick">效果展示</el-button>
+      <el-button type="text" @click="handleSchemaImport">导入 Schema</el-button>
+      <el-button type="text" @click="showFinallySchema">展示 Schema</el-button>
     </div>
   </div>
 </template>

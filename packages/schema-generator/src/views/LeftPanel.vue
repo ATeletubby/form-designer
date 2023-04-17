@@ -1,32 +1,60 @@
 <script setup lang="ts">
 import { useConfigStore } from "../stores/config";
+import { defineAsyncComponent, markRaw, reactive } from "vue";
 const store = useConfigStore();
 
+const CurrentComponent = reactive({
+  CardComponent: markRaw(
+    defineAsyncComponent(() => import("../components/basic/CardComponent.vue")),
+  ),
+  ButtonComponent: markRaw(
+    defineAsyncComponent(() => import("../components/basic/ButtonComponent.vue")),
+  ),
+  CheckboxComponent: markRaw(
+    defineAsyncComponent(() => import("../components/basic/CheckboxComponent.vue")),
+  ),
+  RadioComponent: markRaw(
+    defineAsyncComponent(() => import("../components/basic/RadioComponent.vue")),
+  ),
+  SelectComponent: markRaw(
+    defineAsyncComponent(() => import("../components/basic/SelectComponent.vue")),
+  ),
+  SwitchComponent: markRaw(
+    defineAsyncComponent(() => import("../components/basic/SwitchComponent.vue")),
+  ),
+  InputComponent: markRaw(
+    defineAsyncComponent(() => import("../components/basic/InputComponent.vue")),
+  ),
+  FormItemComponent: markRaw(
+    defineAsyncComponent(() => import("../components/basic/FormItemComponent.vue")),
+  ),
+  DialogComponent: markRaw(
+    defineAsyncComponent(() => import("../components/basic/DialogComponent.vue")),
+  ),
+});
 function handleAddComponentClick() {
   store.changeComSelectDialogVisible(true);
-  // store.changeAddComponentToChildren(false);
 }
 </script>
 
 <template>
-  <div w:flex="~" w:justify="between">
+  <div w:flex="~ 1" w:justify="between">
     <el-form
       w:p="20px"
       w:flex="grow"
       :label-width="store?.labelWidth + 'px'"
+      label-position="left"
       w:overflow="y-auto"
       style="height: calc(100vh - 70px)"
     >
       <draggable v-model="store.productSchema.components" :animation="150">
-        <transition-group>
-          <component
-            :is="item.component"
-            v-for="item in store.productSchema.components"
-            :key="item.id"
-            w:m="b-20px"
-            :component-props="item"
-          ></component>
-        </transition-group>
+        <component
+          :is="CurrentComponent[item.component]"
+          v-for="item in store.productSchema.components"
+          :key="item.id"
+          w:m="b-20px"
+          :component-props="item"
+        ></component>
       </draggable>
       <div
         w:m="t-20px"

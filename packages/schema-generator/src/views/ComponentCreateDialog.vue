@@ -1,11 +1,7 @@
 <script setup lang="ts">
-import { ComponentItem } from "../model";
+import { ComponentItem, componentList } from "../model";
 import { useConfigStore } from "../stores/config";
 const store = useConfigStore();
-
-function addComponent(component: ComponentItem) {
-  this.$emit("addComponent", component);
-}
 </script>
 
 <template>
@@ -22,7 +18,7 @@ function addComponent(component: ComponentItem) {
         w:flex="~"
         w:justify="center"
         w:align="items-center"
-        @click="addComponent(item)"
+        @click="$emit('addComponent', item)"
       >
         {{ item.name }}
       </div>
@@ -39,7 +35,7 @@ function addComponent(component: ComponentItem) {
         w:flex="~"
         w:justify="center"
         w:align="items-center"
-        @click="addComponent(item)"
+        @click="$emit('addComponent', item)"
       >
         {{ item.name }}
       </div>

@@ -3,7 +3,8 @@ import { AdditionalOperation, RulesLogic } from "../model/json-logic-js";
 import { DesignerComponent, DialogContainerSchema, DialogSchema, ProductSchema } from "../model";
 import * as uuid from "uuid";
 
-export const useConfigStore = defineStore("config", {
+export const useConfigStore = defineStore({
+  id: "config",
   state: () => ({
     labelWidth: 100,
     activeComponentId: null as null | string, // 选中状态的组件 id
@@ -14,7 +15,19 @@ export const useConfigStore = defineStore("config", {
     formKeys: [] as { id: string; key: string }[],
     productSchema: {
       labelWidth: "100px",
-      components: [],
+      components: [
+        {
+          id: "12d4cc7c-0f01-49ee-99a3-1a038e990d26",
+          component: "CardComponent",
+          visibleRule: {},
+          visible: true,
+          title: "卡片标题",
+          showTitle: true,
+          background: "white",
+          content: "",
+          children: [],
+        },
+      ],
       dialogList: [],
     } as ProductSchema,
     dialogSchema: {
@@ -41,11 +54,9 @@ export const useConfigStore = defineStore("config", {
       this.activeComponent = component;
     },
     changeComSelectDialogVisible(visible: boolean) {
-      console.info(visible);
       this.comSelectDialogVisible = visible;
     },
     changeAddComponentToChildren(val: boolean) {
-      console.info(val);
       this.addComponentToChildren = val;
     },
     changeActiveVisibleRule(val: RulesLogic<AdditionalOperation>) {
