@@ -1,0 +1,30 @@
+.product-designer-component-wrapper .tool-wrapper[data-v-0847c038] {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 28px;
+  width: 28px;
+}
+.product-designer-component-wrapper .tool-wrapper:hover .tool-icon[data-v-0847c038] {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+.product-designer-component-wrapper .tool-wrapper .tool-icon[data-v-0847c038] {
+  font-size: 13px;
+  line-height: 20px;
+}
